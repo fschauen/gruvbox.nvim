@@ -99,7 +99,7 @@ M.highlights = function()
       Boolean        = { fg = C.aqua, bold = true, italic = true },  -- a boolean constant: TRUE, false
       Float          = { link = 'String' },  -- a floating point constant: 2.3e10
 
-      Identifier     = { fg   = C.fg3 },
+      Identifier     = { fg   = fg },
       Function       = { fg   = C.blue },
 
       Statement      = { fg   = C.green    },   -- any statement
@@ -138,7 +138,7 @@ M.highlights = function()
     },
 
     additional = {
-      StatusLine     = { fg = C.fg3 , bg = C.bg2, reverse = true},
+      StatusLine     = { fg = fg , bg = C.bg2, reverse = true},
       StatusLineNC   = { fg = C.bg4, bg = C.bg2, reverse = true},
       Visual         = { fg = C.bg3, bg = bg,       reverse = true},
 
@@ -217,7 +217,7 @@ M.highlights = function()
       vimCommentString   = { fg = C.purple },
       vimCommand         = { fg = C.yellow },
       vimCmdSep          = { fg = C.blue, bold = true },
-      helpExample        = { fg = C.fg3 },
+      helpExample        = { fg = fg },
       helpOption         = { fg = C.aqua },
       helpNote           = { fg = C.purple },
       helpVim            = { fg = C.purple },
@@ -280,9 +280,9 @@ M.highlights = function()
       markdownBlockquote          = { fg = C.fg2, bold = true, italic = true },
       markdownRule                = { link = 'Comment' },
 
-      markdownItalic              = { fg = C.fg3, italic = true },
-      markdownBold                = { fg = C.fg3, bold = true },
-      markdownBoldItalic          = { fg = C.fg3, bold = true, italic = true },
+      markdownItalic              = { fg = fg, italic = true },
+      markdownBold                = { fg = fg, bold = true },
+      markdownBoldItalic          = { fg = fg, bold = true, italic = true },
       markdownCode                = { fg = C.orange },
       markdownCodeBlock           = { link = 'markdownCode' },
       markdownItalicDelimiter     = { link = 'Comment' },
@@ -360,8 +360,8 @@ M.highlights = function()
       TSTagAttribute        = { link = 'TSProperty' },
       TSTagDelimiter        = { link = 'Delimiter' },
       TSText                = { link = 'TSNone' },
-      TSStrong              = { fg = C.fg3, bold = true },
-      TSEmphasis            = { fg = C.fg3, italic = true },
+      TSStrong              = { fg = fg, bold = true },
+      TSEmphasis            = { fg = fg, italic = true },
       TSUnderline           = { underline = true },
       TSStrike              = { strikethrough = true },
       TSTitle               = { link = 'Title' },
@@ -433,7 +433,7 @@ M.highlights = function()
       NeogitHunkHeader           = { fg = C.purple },
       NeogitHunkHeaderHighlight  = { fg = C.br_purple },
       NeogitDiffContext          = { fg = C.bg4 },
-      NeogitDiffContextHighlight = { bg = C.bg0 },
+      NeogitDiffContextHighlight = { bg = bg },
       NeogitDiffAdd              = { fg = C.green, bg = C.green_bg },
       NeogitDiffAddHighlight     = { fg = C.green, bg = C.green_bg },
       NeogitDiffDelete           = { fg = C.red, bg = C.red_bg },

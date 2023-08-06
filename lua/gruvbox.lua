@@ -90,6 +90,10 @@ M.highlights = function()
       Normal         = { fg = fg, bg = bg },   -- normal text
       NormalNC       = { link = 'Normal' },    -- normal text in non-current windows
 
+      NormalFloat    = { link = 'Normal' },    -- floating windows
+      FloatBorder    = { fg = C.gray },
+      FloatTitle     = { fg = C.blue },
+
       Comment        = { fg = C.bg3, italic = true },  -- any comment
 
       Constant       = { fg   = C.orange },  -- any constant
@@ -492,10 +496,10 @@ M.highlights = function()
 
     -- 'nvim-telescope/telescope.nvim'
     telescope = {
-      TelescopeBorder         = { fg = C.gray },
+      TelescopeBorder         = { link = 'FloatBorder' },
       TelescopePromptBorder   = { fg = C.fg0 },
-      TelescopeTitle          = { fg = C.blue, bold = true },
-      TelescopePromptPrefix   = { fg = C.blue },
+      TelescopeTitle          = { link = 'FloatTitle' },
+      TelescopePromptPrefix   = { link = 'FloatTitle' },
       TelescopePromptCounter  = { fg = C.bg3 },
       TelescopeNormal         = { fg = C.gray },
       TelescopeMatching       = { fg = C.fg0 },

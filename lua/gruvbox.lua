@@ -137,8 +137,8 @@ M.highlights = function()
       Todo           = { fg = C.purple, bold = true },
       Error          = { fg = C.red },
       Warning        = { fg = C.yellow},
-      Information    = { fg = C.blue },
-      Hint           = { fg = C.aqua },
+      Information    = { fg = C.br_blue },
+      Hint           = { fg = C.fg0 },
     },
 
     additional = {
@@ -208,8 +208,8 @@ M.highlights = function()
       DiagnosticOk    = { fg = C.green },
       DiagnosticWarn  = { link = 'Warning' },
       DiagnosticError = { link = 'Error' },
-      DiagnosticInfo  = { fg = C.br_blue },
-      DiagnosticHint  = { fg = C.fg0 },
+      DiagnosticInfo  = { link = 'Information' },
+      DiagnosticHint  = { link = 'Hint' },
     },
 
     pum = {

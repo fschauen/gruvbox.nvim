@@ -508,6 +508,15 @@ M.highlights = function()
       TelescopeMultiIcon      = { link = 'TelescopeMultiSelection' },
     },
 
+    -- 'neovim/nvim-lspconfig'
+    lspconfig = {
+      LspInfoTitle    = { link = 'FloatTitle' },
+      LspInfoList     = { link = 'Function' },
+      LspInfoFiletype = { link = 'Type' },
+      LspInfoTip      = { link = 'Comment' },
+      LspInfoBorder   = { link = 'FloatBorder' },
+    },
+
     -- 'hrsh7th/nvim-cmp'
     nvim_cmp = {
       CmpItemAbbr             = { link = 'Comment' },

@@ -1,99 +1,83 @@
 local M = {}
 
 M.colors = function()
-  local c = {                  --  16  |  16   |  256   |
-                               -- dark | light | colors |   R    G    B
-                               --------+-------+--------+---------------
-    dark0_h       = '#1d2021', --      |       |   233  |  29   32   33
-    dark0         = '#282828', --    0 |       |   235  |  40   40   40
-    dark0_s       = '#32302f', --      |       |   236  |  50   48   47
-    dark1         = '#3c3836', --      |    15 |   237  |  60   56   54
-    dark2         = '#504945', --      |       |   239  |  80   73   69
-    dark3         = '#665c54', --      |       |   241  | 102   92   84
-    dark4         = '#7c6f64', --      |     7 |   243  | 124  111  100
-    gray          = '#928374', --    8 |     8 | 24[4,5]| 146  131  116
-    light4        = '#a89984', --    7 |       |   246  | 168  153  132
-    light3        = '#bdae93', --      |       |   248  | 189  174  147
-    light2        = '#d5c4a1', --      |       |   250  | 213  196  161
-    light1        = '#ebdbb2', --   15 |       |   223  | 235  219  178
-    light0_s      = '#f2e5bc', --      |       |   228  | 242  229  188
-    light0        = '#fbf1c7', --      |     0 |   229  | 253  244  193
-    light0_h      = '#f9f5d7', --      |       |   230  | 249  245  215
+  local c = {                    --  16  |  16   |  256   |
+                                 -- dark | light | colors |   R    G    B
+                                 --------+-------+--------+---------------
+    dark0           = '#1d2021', --      |       |   233  |  29   32   33
+  --dark0_h         = '#1d2021', --      |       |   233  |  29   32   33
+  --dark0           = '#282828', --    0 |       |   235  |  40   40   40
+  --dark0_s         = '#32302f', --      |       |   236  |  50   48   47
+    dark1           = '#3c3836', --      |    15 |   237  |  60   56   54
+    dark2           = '#504945', --      |       |   239  |  80   73   69
+    dark3           = '#665c54', --      |       |   241  | 102   92   84
+    dark4           = '#7c6f64', --      |     7 |   243  | 124  111  100
+    gray            = '#928374', --    8 |     8 | 24[4,5]| 146  131  116
+    light4          = '#a89984', --    7 |       |   246  | 168  153  132
+    light3          = '#bdae93', --      |       |   248  | 189  174  147
+    light2          = '#d5c4a1', --      |       |   250  | 213  196  161
+    light1          = '#ebdbb2', --   15 |       |   223  | 235  219  178
+  --light0_s        = '#f2e5bc', --      |       |   228  | 242  229  188
+  --light0          = '#fbf1c7', --      |     0 |   229  | 253  244  193
+  --light0_h        = '#f9f5d7', --      |       |   230  | 249  245  215
+    light0          = '#f9f5d7', --      |       |   230  | 249  245  215
 
-    red_dark      = '#9d0006', --      |     9 |    88  | 157    0    6
-    green_dark    = '#79740e', --      |    10 |   100  | 121  116   14
-    yellow_dark   = '#b57614', --      |    11 |   136  | 181  118   20
-    blue_dark     = '#076678', --      |    12 |    24  |   6  102  120
-    purple_dark   = '#8f3f71', --      |    13 |    96  | 143   63  113
-    aqua_dark     = '#427b58', --      |    14 |    66  |  66  123   88
-    orange_dark   = '#af3a03', --      |       |   130  | 175   58    3
+    red_darkest     = '#2e100f',
+    green_darkest   = '#2e2e0f',
+    yellow_darkest  = '#2e240f',
+    blue_darkest    = '#142829',
+    purple_darkest  = '#29141e',
+    aqua_darkest    = '#182519',
+    orange_darkest  = '#321a0b',
 
-    red           = '#cc241d', --    1 |     1 |   123  | 204   36   29
-    green         = '#98971a', --    2 |     2 |   106  | 152  151   26
-    yellow        = '#d79921', --    3 |     3 |   172  | 215  153   33
-    blue          = '#458588', --    4 |     4 |    66  |  69  133  136
-    purple        = '#b16286', --    5 |     5 |   132  | 177   98  134
-    aqua          = '#689d6a', --    6 |     6 |    72  | 104  157  106
-    orange        = '#d65d0e', --      |       |   166  | 214   93   14
+    red_darker      = '#9d0006', --      |     9 |    88  | 157    0    6
+    green_darker    = '#79740e', --      |    10 |   100  | 121  116   14
+    yellow_darker   = '#b57614', --      |    11 |   136  | 181  118   20
+    blue_darker     = '#076678', --      |    12 |    24  |   6  102  120
+    purple_darker   = '#8f3f71', --      |    13 |    96  | 143   63  113
+    aqua_darker     = '#427b58', --      |    14 |    66  |  66  123   88
+    orange_darker   = '#af3a03', --      |       |   130  | 175   58    3
 
-    red_light     = '#fb4934', --    9 |       |   167  | 251   73   52
-    green_light   = '#b8bb26', --   10 |       |   142  | 184  187   38
-    yellow_light  = '#fabd2f', --   11 |       |   214  | 250  189   47
-    blue_light    = '#83a598', --   12 |       |   109  | 131  165  152
-    purple_light  = '#d3869b', --   13 |       |   175  | 211  134  155
-    aqua_light    = '#8ec07c', --   14 |       |   108  | 142  192  124
-    orange_light  = '#fe8019', --      |       |   208  | 254  128   25
+    red             = '#cc241d', --    1 |     1 |   123  | 204   36   29
+    green           = '#98971a', --    2 |     2 |   106  | 152  151   26
+    yellow          = '#d79921', --    3 |     3 |   172  | 215  153   33
+    blue            = '#458588', --    4 |     4 |    66  |  69  133  136
+    purple          = '#b16286', --    5 |     5 |   132  | 177   98  134
+    aqua            = '#689d6a', --    6 |     6 |    72  | 104  157  106
+    orange          = '#d65d0e', --      |       |   166  | 214   93   14
+
+    red_lighter     = '#fb4934', --    9 |       |   167  | 251   73   52
+    green_lighter   = '#b8bb26', --   10 |       |   142  | 184  187   38
+    yellow_lighter  = '#fabd2f', --   11 |       |   214  | 250  189   47
+    blue_lighter    = '#83a598', --   12 |       |   109  | 131  165  152
+    purple_lighter  = '#d3869b', --   13 |       |   175  | 211  134  155
+    aqua_lighter    = '#8ec07c', --   14 |       |   108  | 142  192  124
+    orange_lighter  = '#fe8019', --      |       |   208  | 254  128   25
+
+    red_lightest    = '#ffd7d4',
+    green_lightest  = '#eeeed2',
+    yellow_lightest = '#f3eace',
+    blue_lightest   = '#d2e4e5',
+    purple_lightest = '#f2dee7',
+    aqua_lightest   = '#d4e3d4',
+    orange_lightest = '#f3e0d3',
   }
 
-  if vim.opt.background:get() == 'dark' then
-    -- c.bg0   = c.dark0  -- default contrast
-    -- c.bg0  = c.dark0_s -- soft contrast
-    c.bg0  = c.dark0_h -- hard contrast
+  local is_dark = vim.opt.background:get() == 'dark'
+  local palette = {}
 
-    c.bg1  = c.dark1
-    c.bg2  = c.dark2
-    c.bg3  = c.dark3
-    c.bg4  = c.dark4
-
-    c.fg0   = c.light0
-    c.fg1   = c.light1
-    c.fg2   = c.light2
-    c.fg3   = c.light3
-    c.fg4   = c.light4
-
-    c.red_faded    = c.red_dark
-    c.green_faded  = c.green_dark
-    c.yellow_faded = c.yellow_dark
-    c.blue_faded   = c.blue_dark
-    c.purple_faded = c.purple_dark
-    c.aqua_faded   = c.aqua_dark
-    c.orange_faded = c.orange_dark
-  else
-    c.bg0   = c.light0     -- default contrast
-    -- c.bg0  = c.light0_s -- soft contrast
-    -- c.bg0  = c.light0_h -- hard contrast
-
-    c.bg1  = c.light1
-    c.bg2  = c.light2
-    c.bg3  = c.light3
-    c.bg4  = c.light4
-
-    c.fg0   = c.dark0
-    c.fg1   = c.dark1
-    c.fg2   = c.dark2
-    c.fg3   = c.dark3
-    c.fg4   = c.dark4
-
-    c.red_faded    = c.red_light
-    c.green_faded  = c.green_light
-    c.yellow_faded = c.yellow_light
-    c.blue_faded   = c.blue_light
-    c.purple_faded = c.purple_light
-    c.aqua_faded   = c.aqua_light
-    c.orange_faded = c.orange_light
+  for i = 0, 4, 1 do
+    palette['fg' .. tostring(i)] = c[(is_dark and 'light' or 'dark') .. tostring(i)]
+    palette['bg' .. tostring(i)] = c[(is_dark and 'dark' or 'light') .. tostring(i)]
   end
 
-  return c
+  for _, accent in ipairs({'red', 'green', 'yellow', 'blue', 'purple', 'aqua', 'orange'}) do
+    palette[accent] = c[accent]
+    palette['br_' .. accent] = c[accent .. '_' .. (is_dark and 'lighter' or 'darker')]
+    palette[accent .. '_bg'] = c[accent .. '_' .. (is_dark and 'darkest' or 'lightest')]
+  end
+
+  return palette
 end
 
 M.highlights = function()
@@ -144,7 +128,7 @@ M.highlights = function()
       SpecialComment = { link = 'Special' },    -- special things inside a comment
       Debug          = { link = 'Special' },    -- debugging statements
 
-      Underlined     = { fg = C.purple_faded, underline = true },
+      Underlined     = { underline = true },
       Ignore         = { },
       Todo           = { fg = C.purple, bold = true },
       Error          = { fg = C.red },
@@ -173,16 +157,18 @@ M.highlights = function()
       IncSearch      = { fg = C.yellow, reverse = true },
       Search         = { fg = C.fg4 , reverse = true },
 
-      DiffAdd        = { fg = C.green},
-      DiffChange     = { fg = C.yellow},
-      DiffDelete     = { fg = C.red},
-      DiffText       = { fg = C.orange},
+      DiffAdd        = { fg = C.green, bg = C.green_bg },
+      DiffDelete     = { fg = C.red, bg = C.red_bg },
+      DiffChange     = { fg = C.yellow, bg = C.yellow_bg },
+      DiffText       = { fg = C.orange, bg = C.orange_bg },
+      diffFile       = { fg = C.br_blue, bg = C.blue_bg },
+      diffIndexLine  = { fg = C.blue },
+      diffNewFile    = { link = 'diffIndexLine' },
+      diffOldFile    = { link = 'diffIndexLine' },
+      diffLine       = { fg = C.purple },
+      diffSubname    = { link = 'diffLine' },
       diffAdded      = { link = 'DiffAdd' },
       diffRemoved    = { link = 'DiffDelete' },
-      diffLine       = { fg = C.purple },
-      diffSubname    = { link = 'diffine' },
-      diffFile       = { fg = C.blue },
-      diffIndexLine  = { link = 'diffFile' },
 
       SpellBad       = { fg = C.orange, undercurl = true },
       SpellCap       = { undercurl = true },
@@ -211,7 +197,7 @@ M.highlights = function()
       TabLineFill = { fg = C.fg4 , bg = C.bg2 },
       TabLineSel  = { fg = C.yellow, bg = bg },
 
-      MatchParen  = { fg = C.red, bg = C.bg3, bold = true },
+      MatchParen  = { fg = C.red, bg = C.reg_bg, bold = true },
     },
 
     pum = {
@@ -228,7 +214,7 @@ M.highlights = function()
       helpSpecial        = { link = 'Special' },
       vimSet             = { link = 'Normal' },
       vimSetEqual        = { link = 'Normal' },
-      vimCommentString   = { fg = C.purple_faded },
+      vimCommentString   = { fg = C.purple },
       vimCommand         = { fg = C.yellow },
       vimCmdSep          = { fg = C.blue, bold = true },
       helpExample        = { fg = C.fg3 },
@@ -252,11 +238,11 @@ M.highlights = function()
       gitcommitSelected        = { link = 'gitcommitComment' },
       gitcommitOnBranch        = { link = 'gitcommitComment' },
 
-      gitcommitBranch          = { fg = C.blue, bg = C.bg1 },
+      gitcommitBranch          = { fg = C.br_blue, bg = C.blue_bg },
       gitcommitNoBranch        = { link = 'gitcommitBranch' },
 
-      gitcommitHeader          = { fg = C.bg3 },
-      gitcommitFile            = { fg = C.fg4 },
+      gitcommitHeader          = { fg = C.bg4 },
+      gitcommitFile            = { link = 'gitcommitHeader' },
 
       gitcommitSelectedType    = { fg = C.green },
       gitcommitSelectedFile    = { link = 'gitcommitSelectedType' },
@@ -399,26 +385,26 @@ M.highlights = function()
 
     -- 'tpope/vim-fugitive'
     fugitive = {
-      fugitiveHeader              = { link = 'Label' },
+      fugitiveHeader              = { link = 'Comment' },
 
-      fugitiveHash                = { fg   = C.purple_faded },
+      fugitiveHash                = { fg   = C.br_blue },
       fugitiveSymbolicRef         = { link = 'gitcommitBranch' },
-      fugitiveCount               = { link = 'fugitiveUntrackedSection' },
+      fugitiveCount               = { link = 'Normal' },
 
-      fugitiveHeading             = { fg   = C.yellow },
-      fugitiveUntrackedHeading    = { link = 'gitcommitUntrackedFile' },
-      fugitiveUnstagedHeading     = { link = 'gitcommitDiscardedFile' },
-      fugitiveStagedHeading       = { link = 'gitcommitSelectedFile' },
+      fugitiveHeading             = { fg = C.br_yellow, italic = true, bold = true },
+      fugitiveUntrackedHeading    = { fg = C.br_aqua,   italic = true, bold = true },
+      fugitiveUnstagedHeading     = { fg = C.br_orange, italic = true, bold = true },
+      fugitiveStagedHeading       = { fg = C.br_green,  italic = true, bold = true },
+
+      fugitiveModifier            = { fg = C.yellow },
+      fugitiveUntrackedModifier   = { fg = C.aqua },
+      fugitiveUnstagedModifier    = { fg = C.orange },
+      fugitiveStagedModifier      = { fg = C.green },
 
       fugitiveSection             = { link = 'Normal' },
-      fugitiveUntrackedSection    = { fg   = C.fg2 },
-      fugitiveUnstagedSection     = { link = 'fugitiveUntrackedSection' },
-      fugitiveStagedSection       = { link = 'fugitiveUntrackedSection' },
-
-      fugitiveModifier            = { link = 'fugitiveHeading' },
-      fugitiveUntrackedModifier   = { link = 'gitcommitUntrackedFile' },
-      fugitiveUnstagedModifier    = { link = 'gitcommitDiscardedFile' },
-      fugitiveStagedModifier      = { link = 'gitcommitSelectedFile' },
+      fugitiveUntrackedSection    = { link = 'fugitiveSection' },
+      fugitiveUnstagedSection     = { link = 'fugitiveSection' },
+      fugitiveStagedSection       = { link = 'fugitiveSection' },
 
       fugitiveHelpHeader          = { link = 'fugitiveHeader' },
       fugitiveHelpTag             = { link = 'Tag' },

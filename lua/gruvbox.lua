@@ -201,7 +201,7 @@ M.highlights = function()
       TabLineFill = { fg = C.fg4 , bg = C.bg2 },
       TabLineSel  = { fg = C.yellow, bg = bg },
 
-      MatchParen  = { fg = C.red, bg = C.reg_bg, bold = true },
+      MatchParen  = { fg = C.red, bg = C.red_bg, bold = true },
     },
 
     diagnostic = {

@@ -204,6 +204,14 @@ M.highlights = function()
       MatchParen  = { fg = C.red, bg = C.reg_bg, bold = true },
     },
 
+    diagnostic = {
+      DiagnosticOk    = { fg = C.green },
+      DiagnosticWarn  = { link = 'Warning' },
+      DiagnosticError = { link = 'Error' },
+      DiagnosticInfo  = { fg = C.br_blue },
+      DiagnosticHint  = { fg = C.fg0 },
+    },
+
     pum = {
       Pmenu       = { fg = fg, bg = C.bg2 },                    -- popup menu normal item
       PmenuSel    = { fg = C.bg3, bg = C.fg2, reverse = true},  -- selected item

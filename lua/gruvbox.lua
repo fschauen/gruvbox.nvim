@@ -412,6 +412,54 @@ M.highlights = function()
       fugitiveStop                = { link = 'Function' },
     },
 
+    neogit = {
+      NeogitCommitMessage        = { link = 'Comment' },
+      NeogitBranch               = { fg = C.br_blue, bg = C.blue_bg, bold = true },
+      NeogitRemote               = { fg = C.blue, bg = C.blue_bg, italic = true},
+      NeogitObjectId             = { fg = C.br_blue },
+      NeogitStash                = { link = 'NeogitObjectId' },
+      NeogitRebaseDone           = { link = 'NeogitObjectId' },
+
+      NeogitUntrackedfiles       = { fg = C.br_aqua,   italic = true, bold = true },
+      NeogitUnstagedchanges      = { fg = C.br_orange, italic = true, bold = true },
+      NeogitStagedchanges        = { fg = C.br_green,  italic = true, bold = true },
+      NeogitStashes              = { fg = C.br_yellow, italic = true, bold = true },
+      NeogitUnmergedInto         = { link = 'NeogitStashes' },
+      NeogitUnpushedTo           = { link = 'NeogitStashes' },
+      NeogitUnpulledFrom         = { link = 'NeogitStashes' },
+      NeogitRecentcommits        = { link = 'NeogitStashes' },
+      NeogitRebasing             = { link = 'NeogitStashes' },
+
+      NeogitHunkHeader           = { fg = C.purple },
+      NeogitHunkHeaderHighlight  = { fg = C.br_purple },
+      NeogitDiffContext          = { fg = C.bg4 },
+      NeogitDiffContextHighlight = { bg = C.bg0 },
+      NeogitDiffAdd              = { fg = C.green, bg = C.green_bg },
+      NeogitDiffAddHighlight     = { fg = C.green, bg = C.green_bg },
+      NeogitDiffDelete           = { fg = C.red, bg = C.red_bg },
+      NeogitDiffDeleteHighlight  = { fg = C.red, bg = C.red_bg },
+
+      NeogitPopupSectionTitle    = { fg = C.yellow },
+      NeogitPopupBranchName      = { link = 'NeogitBranch' },
+      NeogitPopupBold            = { bold = true },
+      NeogitPopupSwitchKey       = { fg = C.blue },
+      NeogitPopupSwitchEnabled   = { fg = C.br_red },
+      NeogitPopupSwitchDisabled  = { link = 'Comment' },
+      NeogitPopupOptionKey       = { link = 'NeogitPopupSwitchKey' },
+      NeogitPopupOptionEnabled   = { link = 'NeogitPopupSwitchEnabled' },
+      NeogitPopupOptionDisabled  = { link = 'NeogitPopupSwitchDisabled' },
+      NeogitPopupConfigKey       = { link = 'NeogitPopupSwitchKey' },
+      NeogitPopupConfigEnabled   = { link = 'NeogitPopupSwitchEnabled' },
+      NeogitPopupConfigDisabled  = { link = 'NeogitPopupSwitchDisabled' },
+      NeogitPopupActionKey       = { fg = C.aqua },
+      NeogitPopupActionDisabled  = { link = 'Comment' },
+
+      NeogitCommitViewHeader     = { fg = C.yellow },
+      NeogitFilePath             = { fg = C.fg1, italic = true },
+      NeogitDiffHeader           = { fg = C.blue, bg = C.blue_bg },
+      NeogitDiffHeaderHighlight  = { fg = C.br_blue, bg = C.blue_bg },
+    },
+
     -- 'ntpeters/vim-better-whitespace'
     better_whitespace = {
       ExtraWhitespace = { fg = C.orange, bg = C.orange }, -- trailing whitespace

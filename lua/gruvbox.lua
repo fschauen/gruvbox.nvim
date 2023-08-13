@@ -159,8 +159,8 @@ M.highlights = function()
       CursorLine     = { bg = C.bg1 },
       CursorLineNr   = { fg = C.fg2 },
 
-      IncSearch      = { fg = C.yellow, reverse = true },
-      Search         = { fg = C.fg4 , reverse = true },
+      IncSearch      = { fg = C.br_yellow, reverse = true },
+      Search         = { fg = C.yellow , reverse = true },
 
       DiffAdd        = { fg = C.green, bg = C.green_bg },
       DiffDelete     = { fg = C.red, bg = C.red_bg },

@@ -65,7 +65,7 @@ M.colors = function()
   }
 
   local is_dark = vim.opt.background:get() == 'dark'
-  local palette = {}
+  local palette = { gray = c.gray }
 
   for i = 0, 4, 1 do
     palette['fg' .. tostring(i)] = c[(is_dark and 'light' or 'dark') .. tostring(i)]

@@ -198,9 +198,9 @@ M.highlights = function()
       Whitespace     = { fg = C.orange },                -- listchars
       QuickFixLine   = { fg = C.yellow , bg = C.bg2 },   -- selected quickfix item
 
-      TabLine     = { fg = C.fg4 , bg = C.bg2 },
-      TabLineFill = { fg = C.fg4 , bg = C.bg2 },
-      TabLineSel  = { fg = C.yellow, bg = bg },
+      TabLine     = { fg = C.fg4, bg = C.bg1, underline = true },
+      TabLineFill = { fg = C.fg4, bg = C.bg1, underline = true },
+      TabLineSel  = { fg = C.blue, bg = bg },
 
       MatchParen  = { fg = C.red, bg = C.red_bg, bold = true },
     },

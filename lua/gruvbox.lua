@@ -551,6 +551,16 @@ M.highlights = function()
       CmpItemKindUnit         = { link = 'CmpItemKindKeyword' },
 
     },
+
+    -- 'mawkler/modicator.nvim'
+    modicator = {
+      NormalMode  = { fg = C.br_blue    },
+      InsertMode  = { fg = C.br_green,  italic = true },
+      VisualMode  = { fg = C.br_purple, italic = true},
+      SelectMode  = { fg = C.br_purple, bold = true },
+      CommandMode = { fg = C.br_yellow  },
+      ReplaceMode = { fg = C.br_red,    bold = true, italic = true },
+    },
   }
 end
 

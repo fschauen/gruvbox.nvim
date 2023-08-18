@@ -60,4 +60,5 @@ None. This is supposed to be simple, remember?
 - [vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim)
+- [modicator.nvim](https://github.com/mawkler/modicator.nvim)
 

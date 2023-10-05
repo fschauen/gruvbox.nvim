@@ -5,10 +5,7 @@ M.colors = function()
                                  -- dark | light | colors |   R    G    B
                                  --------+-------+--------+---------------
     dark0           = '#171a1b', --      |       |   232  |  23   26   27
-  --dark0_hh        = '#171a1b', --      |       |   232  |  23   26   27
-  --dark0_h         = '#1d2021', --      |       |   233  |  29   32   33
-  --dark0           = '#282828', --    0 |       |   235  |  40   40   40
-  --dark0_s         = '#32302f', --      |       |   236  |  50   48   47
+    dark0_s         = '#1d2021', --      |       |   233  |  29   32   33
     dark1           = '#3c3836', --      |    15 |   237  |  60   56   54
     dark2           = '#504945', --      |       |   239  |  80   73   69
     dark3           = '#665c54', --      |       |   241  | 102   92   84
@@ -18,9 +15,8 @@ M.colors = function()
     light3          = '#bdae93', --      |       |   248  | 189  174  147
     light2          = '#d5c4a1', --      |       |   250  | 213  196  161
     light1          = '#ebdbb2', --   15 |       |   223  | 235  219  178
-  --light0_s        = '#f2e5bc', --      |       |   228  | 242  229  188
-  --light0          = '#fbf1c7', --      |     0 |   229  | 253  244  193
-  --light0_h        = '#f9f5d7', --      |       |   230  | 249  245  215
+  --light0_ss       = '#f2e5bc', --      |       |   228  | 242  229  188
+    light0_s        = '#fbf1c7', --      |     0 |   229  | 253  244  193
     light0          = '#f9f5d7', --      |       |   230  | 249  245  215
 
     red_darkest     = '#2e100f',
@@ -71,6 +67,9 @@ M.colors = function()
     palette['fg' .. tostring(i)] = c[(is_dark and 'light' or 'dark') .. tostring(i)]
     palette['bg' .. tostring(i)] = c[(is_dark and 'dark' or 'light') .. tostring(i)]
   end
+
+  palette['fg0_s'] = c[(is_dark and 'light' or 'dark') .. '0_s']
+  palette['bg0_s'] = c[(is_dark and 'dark' or 'light') .. '0_s']
 
   for _, accent in ipairs({'red', 'green', 'yellow', 'blue', 'purple', 'aqua', 'orange'}) do
     palette[accent] = c[accent]
@@ -156,8 +155,8 @@ M.highlights = function()
       TermCursor     = { link = 'Cursor' },
 
       LineNr         = { fg = C.bg3 },
-      CursorLine     = { bg = C.bg1 },
-      CursorLineNr   = { fg = C.fg2 },
+      CursorLine     = { bg = C.bg0_s },
+      CursorLineNr   = { bg = C.bg0_s, fg = C.fg2 },
 
       IncSearch      = { fg = C.br_yellow, reverse = true },
       Search         = { fg = C.yellow , reverse = true },

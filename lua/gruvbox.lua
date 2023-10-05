@@ -15,9 +15,8 @@ M.colors = function()
     light3          = '#bdae93', --      |       |   248  | 189  174  147
     light2          = '#d5c4a1', --      |       |   250  | 213  196  161
     light1          = '#ebdbb2', --   15 |       |   223  | 235  219  178
-  --light0_ss       = '#f2e5bc', --      |       |   228  | 242  229  188
-    light0_s        = '#fbf1c7', --      |     0 |   229  | 253  244  193
-    light0          = '#f9f5d7', --      |       |   230  | 249  245  215
+    light0_s        = '#f2e5bc', --      |       |   228  | 242  229  188
+    light0          = '#fbf1c7', --      |     0 |   229  | 253  244  193
 
     red_darkest     = '#2e100f',
     green_darkest   = '#2e2e0f',

@@ -478,8 +478,8 @@ M.highlights = function()
 
     -- 'lukas-reineke/indent-blankline.nvim'
     indent_blankline = {
-      IndentBlanklineChar = { fg = C.bg1 },
-      IndentBlanklineContextChar = { fg = C.bg4 },
+      IblIndent = { fg = C.bg1 },
+      IblScope = { fg = C.bg4 },
     },
 
     -- 'lukas-reineke/virt-column.nvim'

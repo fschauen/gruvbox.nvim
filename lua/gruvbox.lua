@@ -702,6 +702,14 @@ M.highlights = function()
       CommandMode = { fg = C.br_yellow  },
       ReplaceMode = { fg = C.br_red,    bold = true, italic = true },
     },
+
+    -- 'rhysd/git-messenger.vim'
+    git_messenger = {
+      gitmessengerPopupNormal = { link = 'Normal' },
+      gitmessengerHeader      = { link = 'Function' },
+      gitmessengerHash        = { link = 'Subtitle' },
+      gitmessengerHistory     = { link = 'diffFile' },
+    },
   }
 end
 

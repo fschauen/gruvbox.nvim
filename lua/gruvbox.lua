@@ -710,6 +710,12 @@ M.highlights = function()
       gitmessengerHash        = { link = 'Subtitle' },
       gitmessengerHistory     = { link = 'diffFile' },
     },
+
+    -- 'j-hui/fidget.nvim'
+    fidget = {
+      FidgetTitle = { link = 'Title' },
+      FidgetTask  = { link = 'String' },
+    },
   }
 end
 

@@ -537,6 +537,15 @@ M.highlights = function()
       ['@lsp.type.variable']        = { link = '@variable' },
     },
 
+    lsp = {
+      -- LspReferenceText
+      -- LspReferenceRead
+      -- LspReferenceWrite
+      -- LspCodeLens
+      -- LspCodeLensSeparator
+      LspSignatureActiveParameter = { fg = C.fg0, bg = C.aqua_bg, bold = true, italic = true },
+    },
+
     -- 'tpope/vim-fugitive'
     fugitive = {
       fugitiveHeader              = { link = 'Comment' },

@@ -716,6 +716,24 @@ M.highlights = function()
       FidgetTitle = { link = 'Title' },
       FidgetTask  = { link = 'String' },
     },
+
+    -- 'rcarriga/nvim-notify'
+    nvim_notify = {
+      NotifyLogTitle   = { fg = C.purple },
+      NotifyLogTime    = { link = 'Comment' },
+
+      NotifyTRACETitle = { link = 'DiagnosticInfo' },
+      NotifyDEBUGTitle = { link = 'DiagnosticHint' },
+      NotifyINFOTitle  = { link = 'DiagnosticOk' },
+      NotifyWARNTitle  = { link = 'DiagnosticWarn' },
+      NotifyERRORTitle = { link = 'DiagnosticError' },
+
+      NotifyTRACEBorder = { link = 'DiagnosticInfo' },
+      NotifyDEBUGBorder = { link = 'DiagnosticHint' },
+      NotifyINFOBorder  = { link = 'DiagnosticOk' },
+      NotifyWARNBorder  = { link = 'DiagnosticWarn' },
+      NotifyERRORBorder = { link = 'DiagnosticError' },
+    },
   }
 end
 

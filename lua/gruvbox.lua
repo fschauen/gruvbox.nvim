@@ -87,7 +87,7 @@ M.highlights = function()
   return {
     standard = {
       Normal         = { fg = fg, bg = bg },   -- normal text
-      NormalNC       = { link = 'Normal' },    -- normal text in non-current windows
+      NormalNC       = { fg = fg, bg = C.bg0_s },    -- normal text in non-current windows
 
       NormalFloat    = { link = 'Normal' },    -- floating windows
       FloatBorder    = { fg = C.gray },

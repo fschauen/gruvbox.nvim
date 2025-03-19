@@ -685,19 +685,19 @@ M.highlights = function()
       CmpItemAbbrMatch        = { fg   = C.fg0 },
       CmpItemAbbrMatchFuzzy   = { link = 'CmpItemAbbrMatch' },
 
-      CmpItemAbbrDeprecated   = { fg   = C.orange, strikethrough = true },
+      CmpItemAbbrDeprecated   = { fg   = C.dim_orange, strikethrough = true },
 
-      CmpItemKind             = { fg   = C.purple },
+      CmpItemKind             = { fg   = C.dim_purple },
       CmpItemMenu             = { fg   = C.bg2, italic = true },
 
-      CmpItemKindVariable     = { fg   = C.aqua },
+      CmpItemKindVariable     = { fg   = C.dim_aqua },
       CmpItemKindInterface    = { link = 'CmpItemKindVariable' },
       CmpItemKindText         = { link = 'CmpItemKindVariable' },
 
-      CmpItemKindFunction     = { fg   = C.blue },
+      CmpItemKindFunction     = { fg   = C.dim_blue },
       CmpItemKindMethod       = { link = 'CmpItemKindFunction' },
 
-      CmpItemKindKeyword      = { fg   = C.green },
+      CmpItemKindKeyword      = { fg   = C.dim_green },
       CmpItemKindProperty     = { link = 'CmpItemKindKeyword' },
       CmpItemKindUnit         = { link = 'CmpItemKindKeyword' },
 

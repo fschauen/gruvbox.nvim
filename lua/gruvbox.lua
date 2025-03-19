@@ -72,6 +72,7 @@ M.colors = function()
 
   for _, accent in ipairs({'red', 'green', 'yellow', 'blue', 'purple', 'aqua', 'orange'}) do
     palette[accent] = c[accent]
+    palette['dim_' .. accent] = c[accent .. '_' .. (is_dark and 'darker' or 'lighter')]
     palette['br_' .. accent] = c[accent .. '_' .. (is_dark and 'lighter' or 'darker')]
     palette[accent .. '_bg'] = c[accent .. '_' .. (is_dark and 'darkest' or 'lightest')]
   end
@@ -134,10 +135,10 @@ M.highlights = function()
       Underlined     = { underline = true },
       Ignore         = { },
       Todo           = { fg = C.purple, bold = true },
-      Error          = { fg = C.red },
-      Warning        = { fg = C.yellow},
-      Information    = { fg = C.br_blue },
-      Hint           = { fg = C.fg0 },
+      Error          = { fg = C.dim_red },
+      Warning        = { fg = C.dim_yellow},
+      Information    = { fg = C.blue },
+      Hint           = { fg = C.fg4 },
     },
 
     additional = {

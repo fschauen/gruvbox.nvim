@@ -728,8 +728,15 @@ M.highlights = function()
 
     -- 'rcarriga/nvim-notify'
     nvim_notify = {
+      NotifyBackground = { fg = fg, bg = bg },
       NotifyLogTitle   = { fg = C.purple },
       NotifyLogTime    = { link = 'Comment' },
+
+      NotifyTRACEIcon = { link = 'DiagnosticInfo' },
+      NotifyDEBUGIcon = { link = 'DiagnosticHint' },
+      NotifyINFOIcon  = { link = 'DiagnosticOk' },
+      NotifyWARNIcon  = { link = 'DiagnosticWarn' },
+      NotifyERRORIcon = { link = 'DiagnosticError' },
 
       NotifyTRACETitle = { link = 'DiagnosticInfo' },
       NotifyDEBUGTitle = { link = 'DiagnosticHint' },

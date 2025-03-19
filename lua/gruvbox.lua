@@ -665,7 +665,7 @@ M.highlights = function()
       TelescopePromptPrefix   = { link = 'FloatTitle' },
       TelescopePromptCounter  = { fg = C.bg3 },
       TelescopeNormal         = { link = 'Normal' },
-      TelescopeMatching       = { fg = C.br_yellow, bg = C.yellow_bg },
+      TelescopeMatching       = { link = 'Search' },
       TelescopeSelection      = { bg = C.blue_bg },
       TelescopeMultiSelection = { fg = C.orange, italic = true },
       TelescopeMultiIcon      = { link = 'TelescopeMultiSelection' },
@@ -683,25 +683,44 @@ M.highlights = function()
     -- 'hrsh7th/nvim-cmp'
     nvim_cmp = {
       CmpItemAbbr             = { link = 'Comment' },
-      CmpItemAbbrMatch        = { fg   = C.fg0 },
+      CmpItemAbbrMatch        = { fg = C.br_purple, bg = C.purple_bg },
       CmpItemAbbrMatchFuzzy   = { link = 'CmpItemAbbrMatch' },
 
       CmpItemAbbrDeprecated   = { fg   = C.dim_orange, strikethrough = true },
 
-      CmpItemKind             = { fg   = C.dim_purple },
       CmpItemMenu             = { fg   = C.bg2, italic = true },
-
-      CmpItemKindVariable     = { fg   = C.dim_aqua },
-      CmpItemKindInterface    = { link = 'CmpItemKindVariable' },
-      CmpItemKindText         = { link = 'CmpItemKindVariable' },
-
-      CmpItemKindFunction     = { fg   = C.dim_blue },
-      CmpItemKindMethod       = { link = 'CmpItemKindFunction' },
+      CmpItemKind             = { fg   = C.fg2 },
+      CmpItemKindText         = { fg   = C.fg2, italic = true },
 
       CmpItemKindKeyword      = { fg   = C.dim_green },
-      CmpItemKindProperty     = { link = 'CmpItemKindKeyword' },
       CmpItemKindUnit         = { link = 'CmpItemKindKeyword' },
 
+      CmpItemKindInterface    = { fg   = C.dim_yellow },
+      CmpItemKindClass        = { link = 'CmpItemKindInterface' },
+      CmpItemKindEnum         = { link = 'CmpItemKindInterface' },
+      CmpItemKindEvent        = { link = 'CmpItemKindInterface' },
+      CmpItemKindModule       = { link = 'CmpItemKindInterface' },
+      CmpItemKindReference    = { link = 'CmpItemKindInterface' },
+      CmpItemKindStruct       = { link = 'CmpItemKindInterface' },
+      CmpItemKindTypeParameter = { link = 'CmpItemKindInterface' },
+
+      CmpItemKindVariable     = { fg   = C.dim_aqua },
+      CmpItemKindField        = { link = 'CmpItemKindVariable' },
+      CmpItemKindProperty     = { link = 'CmpItemKindVariable' },
+
+      CmpItemKindFunction     = { fg   = C.dim_blue },
+      CmpItemKindConstructor  = { link = 'CmpItemKindFunction' },
+      CmpItemKindMethod       = { link = 'CmpItemKindFunction' },
+      CmpItemKindOperator     = { link = 'CmpItemKindFunction' },
+
+      CmpItemKindConstant     = { fg   = C.dim_orange },
+      CmpItemKindColor        = { link = 'CmpItemKindConstant' },
+      CmpItemKindEnumMember   = { link = 'CmpItemKindConstant' },
+
+      CmpItemKindSnippet      = { fg   = C.dim_purple },
+
+      CmpItemKindFile         = { link = 'CmpItemKindText' },
+      CmpItemKindFolder       = { fg   = C.dim_blue },
     },
 
     -- 'mawkler/modicator.nvim'

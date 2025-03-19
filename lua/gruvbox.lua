@@ -94,7 +94,7 @@ M.highlights = function()
       FloatBorder    = { fg = C.gray },
       FloatTitle     = { fg = C.blue },
 
-      Comment        = { fg = C.bg3, italic = true },  -- any comment
+      Comment        = { fg = C.bg3, italic = false },  -- any comment
 
       Constant       = { fg   = C.orange },  -- any constant
       String         = { fg   = C.aqua   },  -- a string constant: "this is a string"

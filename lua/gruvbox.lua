@@ -432,7 +432,7 @@ M.highlights = function()
       ['@keyword.exception']        = { link = 'Exception' },
       ['@keyword.function']         = { link = 'Keyword' },
       ['@keyword.import']           = { link = 'Include' },
-      ['@keyword.operator']         = { link = 'Opeator' },
+      ['@keyword.operator']         = { link = 'Operator' },
       ['@keyword.repeat']           = { link = 'Repeat' },
       ['@keyword.return']           = { link = 'Keyword' },
       ['@keyword.storage']          = { link = 'StorageClass' },

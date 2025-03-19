@@ -114,10 +114,10 @@ M.highlights = function()
       Keyword        = { link = 'Statement' },  -- any other keyword
       Exception      = { link = 'Statement' },  -- try, catch, throw
 
-      PreProc        = { fg   = C.orange },     -- generic Preprocessor
+      PreProc        = { fg   = C.dim_orange }, -- generic Preprocessor
       Include        = { link = 'PreProc' },    -- preprocessor #include
       Define         = { link = 'PreProc' },    -- preprocessor #define
-      Macro          = { link = 'PreProc' },    -- same as Define
+      Macro          = { link = 'Constant' },   -- same as Define
       PreCondit      = { link = 'PreProc' },    -- preprocessor #if, #else, #endif, etc.
 
       Type           = { fg   = C.yellow },     -- int, long, char, etc.
@@ -125,7 +125,7 @@ M.highlights = function()
       Structure      = { link = 'Statement' },  -- struct, union, enum, etc.
       Typedef        = { link = 'Statement' },  -- A typedef
 
-      Special        = { fg   = C.red },        -- any special symbol
+      Special        = { fg   = C.dim_orange }, -- any special symbol
       SpecialChar    = { link = 'Special' },    -- special character in a constant
       Tag            = { link = 'Special' },    -- you can use CTRL-] on this
       Delimiter      = { link = 'Special' },    -- character that needs attention

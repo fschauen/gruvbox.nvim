@@ -1,62 +1,65 @@
 local M = {}
 
+local to_hex = function(s)
+  local r, g, b = string.match(s, "^rgb%(%s*(%d+),%s*(%d+),%s*(%d+)%)")
+  return string.format("#%02x%02x%02x", r, g, b)
+end
+
 M.colors = function()
-  local c = {                    --  16  |  16   |  256   |
-                                 -- dark | light | colors |   R    G    B
-                                 --------+-------+--------+---------------
-    dark0           = '#18191a', --      |       |   232  |  24   25   26
-    dark0_s         = '#1d2021', --      |       |   233  |  29   32   33
-    dark1           = '#3c3836', --      |    15 |   237  |  60   56   54
-    dark2           = '#504945', --      |       |   239  |  80   73   69
-    dark3           = '#665c54', --      |       |   241  | 102   92   84
-    dark4           = '#7c6f64', --      |     7 |   243  | 124  111  100
-    gray            = '#928374', --    8 |     8 | 24[4,5]| 146  131  116
-    light4          = '#a89984', --    7 |       |   246  | 168  153  132
-    light3          = '#bdae93', --      |       |   248  | 189  174  147
-    light2          = '#d5c4a1', --      |       |   250  | 213  196  161
-    light1          = '#ebdbb2', --   15 |       |   223  | 235  219  178
-    light0_s        = '#f2e5bc', --      |       |   228  | 242  229  188
-    light0          = '#fbf1c7', --      |     0 |   229  | 253  244  193
+  local c = {
+    dark0           = to_hex("rgb( 24,  25,  26)"),
+    dark0_s         = to_hex("rgb( 29,  32,  33)"),
+    dark1           = to_hex("rgb( 60,  56,  54)"),
+    dark2           = to_hex("rgb( 80,  73,  69)"),
+    dark3           = to_hex("rgb(102,  92,  84)"),
+    dark4           = to_hex("rgb(124, 111, 100)"),
+    gray            = to_hex("rgb(146, 131, 116)"),
+    light4          = to_hex("rgb(168, 153, 132)"),
+    light3          = to_hex("rgb(189, 174, 147)"),
+    light2          = to_hex("rgb(213, 196, 161)"),
+    light1          = to_hex("rgb(235, 219, 178)"),
+    light0_s        = to_hex("rgb(242, 229, 188)"),
+    light0          = to_hex("rgb(251, 241, 199)"),
 
-    red_darkest     = '#2e100f',
-    green_darkest   = '#2e2e0f',
-    yellow_darkest  = '#2e240f',
-    blue_darkest    = '#142829',
-    purple_darkest  = '#29141e',
-    aqua_darkest    = '#182519',
-    orange_darkest  = '#321a0b',
+    red_darkest     = to_hex("rgb( 46,  16,  15)"),
+    green_darkest   = to_hex("rgb( 46,  46,  15)"),
+    yellow_darkest  = to_hex("rgb( 46,  36,  15)"),
+    blue_darkest    = to_hex("rgb( 20,  40,  41)"),
+    purple_darkest  = to_hex("rgb( 41,  20,  30)"),
+    aqua_darkest    = to_hex("rgb( 24,  37,  25)"),
+    orange_darkest  = to_hex("rgb( 50,  26,  11)"),
 
-    red_darker      = '#9d0006', --      |     9 |    88  | 157    0    6
-    green_darker    = '#79740e', --      |    10 |   100  | 121  116   14
-    yellow_darker   = '#b57614', --      |    11 |   136  | 181  118   20
-    blue_darker     = '#076678', --      |    12 |    24  |   6  102  120
-    purple_darker   = '#8f3f71', --      |    13 |    96  | 143   63  113
-    aqua_darker     = '#427b58', --      |    14 |    66  |  66  123   88
-    orange_darker   = '#af3a03', --      |       |   130  | 175   58    3
+    red_darker      = to_hex("rgb(157,   0,   6)"),
+    green_darker    = to_hex("rgb(121, 116,  14)"),
+    yellow_darker   = to_hex("rgb(181, 118,  20)"),
+    blue_darker     = to_hex("rgb(  7, 102, 120)"),
+    purple_darker   = to_hex("rgb(143,  63, 113)"),
+    aqua_darker     = to_hex("rgb( 66, 123,  88)"),
+    orange_darker   = to_hex("rgb(175,  58,   3)"),
 
-    red             = '#cc241d', --    1 |     1 |   123  | 204   36   29
-    green           = '#98971a', --    2 |     2 |   106  | 152  151   26
-    yellow          = '#d79921', --    3 |     3 |   172  | 215  153   33
-    blue            = '#458588', --    4 |     4 |    66  |  69  133  136
-    purple          = '#b16286', --    5 |     5 |   132  | 177   98  134
-    aqua            = '#689d6a', --    6 |     6 |    72  | 104  157  106
-    orange          = '#d65d0e', --      |       |   166  | 214   93   14
+    red             = to_hex("rgb(204,  36,  29)"),
+    green           = to_hex("rgb(152, 151,  26)"),
+    yellow          = to_hex("rgb(215, 153,  33)"),
+    blue            = to_hex("rgb( 69, 133, 136)"),
+    purple          = to_hex("rgb(177,  98, 134)"),
+    aqua            = to_hex("rgb(104, 157, 106)"),
+    orange          = to_hex("rgb(214,  93,  14)"),
 
-    red_lighter     = '#fb4934', --    9 |       |   167  | 251   73   52
-    green_lighter   = '#b8bb26', --   10 |       |   142  | 184  187   38
-    yellow_lighter  = '#fabd2f', --   11 |       |   214  | 250  189   47
-    blue_lighter    = '#83a598', --   12 |       |   109  | 131  165  152
-    purple_lighter  = '#d3869b', --   13 |       |   175  | 211  134  155
-    aqua_lighter    = '#8ec07c', --   14 |       |   108  | 142  192  124
-    orange_lighter  = '#fe8019', --      |       |   208  | 254  128   25
+    red_lighter     = to_hex("rgb(251,  73,  52)"),
+    green_lighter   = to_hex("rgb(184, 187,  38)"),
+    yellow_lighter  = to_hex("rgb(250, 189,  47)"),
+    blue_lighter    = to_hex("rgb(131, 165, 152)"),
+    purple_lighter  = to_hex("rgb(211, 134, 155)"),
+    aqua_lighter    = to_hex("rgb(142, 192, 124)"),
+    orange_lighter  = to_hex("rgb(254, 128,  25)"),
 
-    red_lightest    = '#ffd7d4',
-    green_lightest  = '#eeeed2',
-    yellow_lightest = '#f3eace',
-    blue_lightest   = '#d2e4e5',
-    purple_lightest = '#f2dee7',
-    aqua_lightest   = '#d4e3d4',
-    orange_lightest = '#f3e0d3',
+    red_lightest    = to_hex("rgb(255, 215, 212)"),
+    green_lightest  = to_hex("rgb(238, 238, 210)"),
+    yellow_lightest = to_hex("rgb(243, 234, 206)"),
+    blue_lightest   = to_hex("rgb(210, 228, 229)"),
+    purple_lightest = to_hex("rgb(242, 222, 231)"),
+    aqua_lightest   = to_hex("rgb(212, 227, 212)"),
+    orange_lightest = to_hex("rgb(243, 224, 211)"),
   }
 
   local is_dark = vim.opt.background:get() == 'dark'

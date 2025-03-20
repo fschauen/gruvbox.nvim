@@ -647,8 +647,9 @@ M.highlights = function()
 
     -- 'lukas-reineke/virt-column.nvim'
     virt_column = {
-      VirtColumn  = { fg = C.bg1 },  -- virtual column
-      ColorColumn = {},  -- otherwise this is visible behind VirtColumn
+      VirtColumn1  = { fg = C.bg1 },
+      VirtColumn2  = { fg = C.dim_yellow, bg = C.bg0 },
+      VirtColumn3  = { fg = C.dim_red, bg = C.orange_bg },
     },
 
     -- 'kyazdani42/nvim-tree.lua'

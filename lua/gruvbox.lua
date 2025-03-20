@@ -7,8 +7,11 @@ end
 
 M.colors = function()
   local c = {
+    dark0_h         = to_hex("rgb( 19,  21,  22)"),
     dark0           = to_hex("rgb( 24,  25,  26)"),
-    dark0_s         = to_hex("rgb( 29,  32,  33)"),
+    dark0_s         = to_hex("rgb( 29,  32,  33)"),  -- bg0_h
+    --                to_hex("rgb( 40,  40,  40)"),  -- bg0
+    --                to_hex("rgb( 50,  48,  47)"),  -- bg0_s
     dark1           = to_hex("rgb( 60,  56,  54)"),
     dark2           = to_hex("rgb( 80,  73,  69)"),
     dark3           = to_hex("rgb(102,  92,  84)"),
@@ -20,6 +23,7 @@ M.colors = function()
     light1          = to_hex("rgb(235, 219, 178)"),
     light0_s        = to_hex("rgb(242, 229, 188)"),
     light0          = to_hex("rgb(251, 241, 199)"),
+    light0_h        = to_hex("rgb(249, 245, 215)"),
 
     red_darkest     = to_hex("rgb( 46,  16,  15)"),
     green_darkest   = to_hex("rgb( 46,  46,  15)"),
@@ -70,7 +74,9 @@ M.colors = function()
     palette['bg' .. tostring(i)] = c[(is_dark and 'dark' or 'light') .. tostring(i)]
   end
 
+  palette['fg0_h'] = c[(is_dark and 'light' or 'dark') .. '0_h']
   palette['fg0_s'] = c[(is_dark and 'light' or 'dark') .. '0_s']
+  palette['bg0_h'] = c[(is_dark and 'dark' or 'light') .. '0_h']
   palette['bg0_s'] = c[(is_dark and 'dark' or 'light') .. '0_s']
 
   for _, accent in ipairs({'red', 'green', 'yellow', 'blue', 'purple', 'aqua', 'orange'}) do
@@ -86,12 +92,12 @@ end
 M.highlights = function()
   local C = M.colors()
   local fg = C.fg3
-  local bg = C.bg0
+  local bg = C.bg0_h
 
   return {
     standard = {
       Normal         = { fg = fg, bg = bg },   -- normal text
-      NormalNC       = { fg = fg, bg = C.bg0_s },    -- normal text in non-current windows
+      NormalNC       = { fg = fg, bg = C.bg0 },    -- normal text in non-current windows
 
       NormalFloat    = { link = 'Normal' },    -- floating windows
       FloatBorder    = { fg = C.gray, bg = bg },
@@ -158,8 +164,8 @@ M.highlights = function()
       TermCursor     = { link = 'Cursor' },
 
       LineNr         = { fg = C.bg3 },
-      CursorLine     = { bg = C.bg0_s },
-      CursorLineNr   = { bg = C.bg0_s, fg = C.fg2 },
+      CursorLine     = { bg = C.bg0 },
+      CursorLineNr   = { bg = C.bg0, fg = C.fg2 },
 
       IncSearch      = { link = 'CurSearch' },
       CurSearch      = { fg = C.purple_bg, bg = C.br_purple, bold = true },
@@ -198,7 +204,7 @@ M.highlights = function()
 
       Directory      = { fg = C.blue },
 
-      NonText        = { fg = C.bg1 },                   -- subtle EOL symbols
+      NonText        = { fg = C.bg3 },                   -- subtle EOL symbols
       Whitespace     = { fg = C.orange },                -- listchars
       QuickFixLine   = { fg = C.yellow , bg = C.bg2 },   -- selected quickfix item
 

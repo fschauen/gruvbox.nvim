@@ -144,8 +144,8 @@ M.highlights = function()
       Underlined     = { underline = true },
       Ignore         = { },
       Todo           = { fg = C.purple, bold = true },
-      Error          = { fg = C.dim_red },
-      Warning        = { fg = C.dim_yellow},
+      Error          = { fg = C.red },
+      Warning        = { fg = C.yellow},
       Information    = { fg = C.blue },
       Hint           = { fg = C.fg4 },
     },
@@ -221,6 +221,16 @@ M.highlights = function()
       DiagnosticError = { link = 'Error' },
       DiagnosticInfo  = { link = 'Information' },
       DiagnosticHint  = { link = 'Hint' },
+
+      DiagnosticVirtualTextWarn  = { fg = C.dim_yellow },
+      DiagnosticVirtualTextError = { fg = C.dim_red },
+      DiagnosticVirtualTextInfo  = { fg = C.dim_blue },
+      DiagnosticVirtualTextHint  = { fg = C.gray },
+
+      DiagnosticSignWarn  = { link = 'DiagnosticVirtualTextWarn' },
+      DiagnosticSignError = { link = 'DiagnosticVirtualTextError' },
+      DiagnosticSignInfo  = { link = 'DiagnosticVirtualTextInfo' },
+      DiagnosticSignHint  = { link = 'DiagnosticVirtualTextHint' },
     },
 
     pum = {

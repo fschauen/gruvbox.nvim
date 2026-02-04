@@ -792,6 +792,47 @@ M.highlights = function()
       NotifyWARNBorder  = { link = 'DiagnosticWarn' },
       NotifyERRORBorder = { link = 'DiagnosticError' },
     },
+
+    -- 'MeanderingProgrammer/render-markdown.nvim'
+    render_markdown = {
+      RenderMarkdownH1          = { link = "@markup.heading.1" },
+      RenderMarkdownH2          = { link = "@markup.heading.2" },
+      RenderMarkdownH3          = { link = "@markup.heading.3" },
+      RenderMarkdownH4          = { link = "@markup.heading.4" },
+      RenderMarkdownH5          = { link = "@markup.heading.5" },
+      RenderMarkdownH6          = { link = "@markup.heading.6" },
+
+      RenderMarkdownH1Bg        = { bg = C.yellow_bg },
+      RenderMarkdownH2Bg        = { bg = C.yellow_bg },
+      RenderMarkdownH3Bg        = { bg = C.yellow_bg },
+      RenderMarkdownH4Bg        = { bg = C.yellow_bg },
+      RenderMarkdownH5Bg        = { bg = C.bg0 },
+      RenderMarkdownH6Bg        = { bg = C.bg0 },
+
+      RenderMarkdownIndent      = { fg = C.yellow_bg },
+      RenderMarkdownDash        = { link = "markdownRule" },
+
+      RenderMarkdownLink        = { link = "@markup.link" },
+      RenderMarkdownLinkTitle   = { link = "@markup.link.label" },
+
+      RenderMarkdownBullet      = { link = "@markup.list" },
+      RenderMarkdownChecked     = { link = "@markup.list.checked" },
+      RenderMarkdownUnchecked   = { link = "@markup.list.unchecked" },
+      RenderMarkdownInProgress  = { fg = C.dim_yellow },
+      RenderMarkdownBlocked     = { fg = C.dim_red },
+
+      RenderMarkdownCode        = { link = "CursorLine" },
+      RenderMarkdownCodeInline  = { fg = C.br_blue, bg = C.blue_bg },
+
+      RenderMarkdownTableHead   = { fg = C.bg3 },
+      RenderMarkdownTableRow    = { link = "RenderMarkdownTableHead" },
+      RenderMarkdownTableFill   = { bg = C.red_bg },
+
+      RenderMarkdownQuote1      = { fg = C.blue },
+      RenderMarkdownQuote2      = { fg = C.aqua },
+      RenderMarkdownQuote3      = { fg = C.purple },
+      RenderMarkdownQuote4      = { fg = C.green },
+    },
   }
 end
 

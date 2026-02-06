@@ -81,9 +81,10 @@ M.colors = function()
 
   for _, accent in ipairs({'red', 'green', 'yellow', 'blue', 'purple', 'aqua', 'orange'}) do
     palette[accent] = c[accent]
-    palette['dim_' .. accent] = c[accent .. '_' .. (is_dark and 'darker' or 'lighter')]
-    palette['br_' .. accent] = c[accent .. '_' .. (is_dark and 'lighter' or 'darker')]
-    palette[accent .. '_bg'] = c[accent .. '_' .. (is_dark and 'darkest' or 'lightest')]
+    palette[accent .. '_hl'] = c[accent .. '_' .. (is_dark and 'lightest' or 'darkest')]
+    palette[accent .. '_br']  = c[accent .. '_' .. (is_dark and 'lighter' or 'darker')]
+    palette[accent .. '_dim'] = c[accent .. '_' .. (is_dark and 'darker' or 'lighter')]
+    palette[accent .. '_bg']  = c[accent .. '_' .. (is_dark and 'darkest' or 'lightest')]
   end
 
   return palette
@@ -123,7 +124,7 @@ M.highlights = function()
       Keyword        = { link = 'Statement' },  -- any other keyword
       Exception      = { link = 'Statement' },  -- try, catch, throw
 
-      PreProc        = { fg   = C.dim_orange }, -- generic Preprocessor
+      PreProc        = { fg   = C.orange_dim }, -- generic Preprocessor
       Include        = { link = 'PreProc' },    -- preprocessor #include
       Define         = { link = 'PreProc' },    -- preprocessor #define
       Macro          = { link = 'Constant' },   -- same as Define
@@ -134,7 +135,7 @@ M.highlights = function()
       Structure      = { link = 'Statement' },  -- struct, union, enum, etc.
       Typedef        = { link = 'Statement' },  -- A typedef
 
-      Special        = { fg   = C.dim_orange }, -- any special symbol
+      Special        = { fg   = C.orange_dim }, -- any special symbol
       SpecialChar    = { link = 'Special' },    -- special character in a constant
       Tag            = { link = 'Special' },    -- you can use CTRL-] on this
       Delimiter      = { link = 'Special' },    -- character that needs attention
@@ -168,14 +169,14 @@ M.highlights = function()
       CursorLineNr   = { bg = C.bg0, fg = C.fg2 },
 
       IncSearch      = { link = 'CurSearch' },
-      CurSearch      = { fg = C.purple_bg, bg = C.br_purple, bold = true },
-      Search         = { fg = C.br_purple, bg = C.purple_bg },
+      CurSearch      = { fg = C.purple_bg, bg = C.purple_br, bold = true },
+      Search         = { fg = C.purple_br, bg = C.purple_bg },
 
       DiffAdd        = { fg = C.green, bg = C.green_bg },
       DiffDelete     = { fg = C.red, bg = C.red_bg },
       DiffChange     = { fg = C.yellow, bg = C.yellow_bg },
       DiffText       = { fg = C.orange, bg = C.orange_bg },
-      diffFile       = { fg = C.br_blue, bg = C.blue_bg },
+      diffFile       = { fg = C.blue_br, bg = C.blue_bg },
       diffIndexLine  = { fg = C.blue },
       diffNewFile    = { link = 'diffIndexLine' },
       diffOldFile    = { link = 'diffIndexLine' },
@@ -222,9 +223,9 @@ M.highlights = function()
       DiagnosticInfo  = { link = 'Information' },
       DiagnosticHint  = { link = 'Hint' },
 
-      DiagnosticVirtualTextWarn  = { fg = C.dim_yellow },
-      DiagnosticVirtualTextError = { fg = C.dim_red },
-      DiagnosticVirtualTextInfo  = { fg = C.dim_blue },
+      DiagnosticVirtualTextWarn  = { fg = C.yellow_dim },
+      DiagnosticVirtualTextError = { fg = C.red_dim },
+      DiagnosticVirtualTextInfo  = { fg = C.blue_dim },
       DiagnosticVirtualTextHint  = { fg = C.gray },
 
       DiagnosticSignWarn  = { link = 'DiagnosticVirtualTextWarn' },
@@ -271,7 +272,7 @@ M.highlights = function()
       gitcommitSelected        = { link = 'gitcommitComment' },
       gitcommitOnBranch        = { link = 'gitcommitComment' },
 
-      gitcommitBranch          = { fg = C.br_blue, bg = C.blue_bg },
+      gitcommitBranch          = { fg = C.blue_br, bg = C.blue_bg },
       gitcommitNoBranch        = { link = 'gitcommitBranch' },
 
       gitcommitHeader          = { fg = C.bg4 },
@@ -293,8 +294,8 @@ M.highlights = function()
     },
 
     markdown = {
-      markdownH1                  = { fg = C.br_yellow, bold = true },
-      markdownH2                  = { fg = C.br_yellow },
+      markdownH1                  = { fg = C.yellow_br, bold = true },
+      markdownH2                  = { fg = C.yellow_br },
       markdownH3                  = { fg = C.yellow },
       markdownH4                  = { link = "markdownH3" },
       markdownH5                  = { link = "markdownH3" },
@@ -308,7 +309,7 @@ M.highlights = function()
       markdownH5Delimiter         = { link = 'markdownHeadingDelimiter' },
       markdownH6Delimiter         = { link = 'markdownHeadingDelimiter' },
 
-      markdownListMarker          = { fg = C.dim_aqua },
+      markdownListMarker          = { fg = C.aqua_dim },
       markdownOrderedListMarker   = { link = "markdownListMarker" },
       markdownBlockquote          = { fg = C.fg2, bold = true, italic = true },
       markdownRule                = { link = 'LineNr' },
@@ -484,7 +485,7 @@ M.highlights = function()
       ['@markup.italic']            = { link = '@markup.emphasis' },
       ['@markup.underline']         = { underline = true },
       ['@markup.strike']            = { strikethrough = true },
-      ['@markup.heading']           = { fg = C.dim_blue, bold = true },  -- markdown table headers
+      ['@markup.heading']           = { fg = C.blue_dim, bold = true },  -- markdown table headers
       ['@markup.heading.1']         = { link = 'markdownH1' },
       ['@markup.heading.2']         = { link = 'markdownH2' },
       ['@markup.heading.3']         = { link = 'markdownH3' },
@@ -497,7 +498,7 @@ M.highlights = function()
       ['@markup.math']              = { link = '@markup.raw' },
       ['@markup.environment']       = { link = 'Macro' },
       ['@markup.environment.name']  = { link = 'Type' },
-      ['@markup.link']              = { fg = C.dim_blue },
+      ['@markup.link']              = { fg = C.blue_dim },
       ['@markup.link.label']        = { link = "markdownLinkText" },
       ['@markup.link.url']          = { link = "markdownUrl" },
       ['@markup.list']              = { link = "markdownListMarker"},
@@ -572,14 +573,14 @@ M.highlights = function()
     fugitive = {
       fugitiveHeader              = { link = 'Comment' },
 
-      fugitiveHash                = { fg   = C.br_blue },
+      fugitiveHash                = { fg   = C.blue_br },
       fugitiveSymbolicRef         = { link = 'gitcommitBranch' },
       fugitiveCount               = { link = 'Normal' },
 
-      fugitiveHeading             = { fg = C.br_yellow, italic = true, bold = true },
-      fugitiveUntrackedHeading    = { fg = C.br_aqua,   italic = true, bold = true },
-      fugitiveUnstagedHeading     = { fg = C.br_orange, italic = true, bold = true },
-      fugitiveStagedHeading       = { fg = C.br_green,  italic = true, bold = true },
+      fugitiveHeading             = { fg = C.yellow_br, italic = true, bold = true },
+      fugitiveUntrackedHeading    = { fg = C.aqua_br,   italic = true, bold = true },
+      fugitiveUnstagedHeading     = { fg = C.orange_br, italic = true, bold = true },
+      fugitiveStagedHeading       = { fg = C.green_br,  italic = true, bold = true },
 
       fugitiveModifier            = { fg = C.yellow },
       fugitiveUntrackedModifier   = { fg = C.aqua },
@@ -599,16 +600,16 @@ M.highlights = function()
 
     neogit = {
       NeogitCommitMessage        = { link = 'Comment' },
-      NeogitBranch               = { fg = C.br_blue, bg = C.blue_bg, bold = true },
+      NeogitBranch               = { fg = C.blue_br, bg = C.blue_bg, bold = true },
       NeogitRemote               = { fg = C.blue, bg = C.blue_bg, italic = true},
-      NeogitObjectId             = { fg = C.br_blue },
+      NeogitObjectId             = { fg = C.blue_br },
       NeogitStash                = { link = 'NeogitObjectId' },
       NeogitRebaseDone           = { link = 'NeogitObjectId' },
 
-      NeogitUntrackedfiles       = { fg = C.br_aqua,   italic = true, bold = true },
-      NeogitUnstagedchanges      = { fg = C.br_orange, italic = true, bold = true },
-      NeogitStagedchanges        = { fg = C.br_green,  italic = true, bold = true },
-      NeogitStashes              = { fg = C.br_yellow, italic = true, bold = true },
+      NeogitUntrackedfiles       = { fg = C.aqua_br,   italic = true, bold = true },
+      NeogitUnstagedchanges      = { fg = C.orange_br, italic = true, bold = true },
+      NeogitStagedchanges        = { fg = C.green_br,  italic = true, bold = true },
+      NeogitStashes              = { fg = C.yellow_br, italic = true, bold = true },
       NeogitUnmergedInto         = { link = 'NeogitStashes' },
       NeogitUnpushedTo           = { link = 'NeogitStashes' },
       NeogitUnpulledFrom         = { link = 'NeogitStashes' },
@@ -616,7 +617,7 @@ M.highlights = function()
       NeogitRebasing             = { link = 'NeogitStashes' },
 
       NeogitHunkHeader           = { fg = C.purple },
-      NeogitHunkHeaderHighlight  = { fg = C.br_purple },
+      NeogitHunkHeaderHighlight  = { fg = C.purple_br },
       NeogitDiffContext          = { fg = C.bg4 },
       NeogitDiffContextHighlight = { bg = bg },
       NeogitDiffAdd              = { fg = C.green, bg = C.green_bg },
@@ -628,7 +629,7 @@ M.highlights = function()
       NeogitPopupBranchName      = { link = 'NeogitBranch' },
       NeogitPopupBold            = { bold = true },
       NeogitPopupSwitchKey       = { fg = C.blue },
-      NeogitPopupSwitchEnabled   = { fg = C.br_red },
+      NeogitPopupSwitchEnabled   = { fg = C.red_br },
       NeogitPopupSwitchDisabled  = { link = 'Comment' },
       NeogitPopupOptionKey       = { link = 'NeogitPopupSwitchKey' },
       NeogitPopupOptionEnabled   = { link = 'NeogitPopupSwitchEnabled' },
@@ -642,7 +643,7 @@ M.highlights = function()
       NeogitCommitViewHeader     = { fg = C.yellow },
       NeogitFilePath             = { fg = C.fg1, italic = true },
       NeogitDiffHeader           = { fg = C.blue, bg = C.blue_bg },
-      NeogitDiffHeaderHighlight  = { fg = C.br_blue, bg = C.blue_bg },
+      NeogitDiffHeaderHighlight  = { fg = C.blue_br, bg = C.blue_bg },
     },
 
     -- 'ntpeters/vim-better-whitespace'
@@ -659,8 +660,8 @@ M.highlights = function()
     -- 'lukas-reineke/virt-column.nvim'
     virt_column = {
       VirtColumn1  = { fg = C.bg1 },
-      VirtColumn2  = { fg = C.dim_yellow, bg = C.bg0 },
-      VirtColumn3  = { fg = C.dim_red, bg = C.orange_bg },
+      VirtColumn2  = { fg = C.yellow_dim, bg = C.bg0 },
+      VirtColumn3  = { fg = C.red_dim, bg = C.orange_bg },
     },
 
     -- 'kyazdani42/nvim-tree.lua'
@@ -670,18 +671,18 @@ M.highlights = function()
       NvimTreeFileIcon     = { fg = C.bg2 },
       NvimTreeSpecialFile  = { fg = C.fg2 },
       NvimTreeIndentMarker = { fg = C.bg3 },
-      NvimTreeGitStaged    = { fg = C.br_green },
-      NvimTreeGitRenamed   = { fg = C.br_yellow },
-      NvimTreeGitNew       = { fg = C.br_aqua },
-      NvimTreeGitDirty     = { fg = C.br_yellow },
-      NvimTreeGitDeleted   = { fg = C.br_orange },
+      NvimTreeGitStaged    = { fg = C.green_br },
+      NvimTreeGitRenamed   = { fg = C.yellow_br },
+      NvimTreeGitNew       = { fg = C.aqua_br },
+      NvimTreeGitDirty     = { fg = C.yellow_br },
+      NvimTreeGitDeleted   = { fg = C.orange_br },
       NvimTreeGitMerge     = { fg = C.red },
     },
 
     -- 'nvim-telescope/telescope.nvim'
     telescope = {
       TelescopeBorder         = { link = 'FloatBorder' },
-      TelescopePromptBorder   = { fg = C.br_blue, bg = bg },
+      TelescopePromptBorder   = { fg = C.blue_br, bg = bg },
       TelescopeTitle          = { link = 'FloatTitle' },
       TelescopePromptPrefix   = { link = 'FloatTitle' },
       TelescopePromptCounter  = { fg = C.bg3 },
@@ -704,19 +705,19 @@ M.highlights = function()
     -- 'hrsh7th/nvim-cmp'
     nvim_cmp = {
       CmpItemAbbr             = { link = 'Comment' },
-      CmpItemAbbrMatch        = { fg = C.br_purple, bg = C.purple_bg },
+      CmpItemAbbrMatch        = { fg = C.purple_br, bg = C.purple_bg },
       CmpItemAbbrMatchFuzzy   = { link = 'CmpItemAbbrMatch' },
 
-      CmpItemAbbrDeprecated   = { fg   = C.dim_orange, strikethrough = true },
+      CmpItemAbbrDeprecated   = { fg   = C.orange_dim, strikethrough = true },
 
       CmpItemMenu             = { fg   = C.bg2, italic = true },
       CmpItemKind             = { fg   = C.fg2 },
       CmpItemKindText         = { fg   = C.fg2, italic = true },
 
-      CmpItemKindKeyword      = { fg   = C.dim_green },
+      CmpItemKindKeyword      = { fg   = C.green_dim },
       CmpItemKindUnit         = { link = 'CmpItemKindKeyword' },
 
-      CmpItemKindInterface    = { fg   = C.dim_yellow },
+      CmpItemKindInterface    = { fg   = C.yellow_dim },
       CmpItemKindClass        = { link = 'CmpItemKindInterface' },
       CmpItemKindEnum         = { link = 'CmpItemKindInterface' },
       CmpItemKindEvent        = { link = 'CmpItemKindInterface' },
@@ -725,33 +726,33 @@ M.highlights = function()
       CmpItemKindStruct       = { link = 'CmpItemKindInterface' },
       CmpItemKindTypeParameter = { link = 'CmpItemKindInterface' },
 
-      CmpItemKindVariable     = { fg   = C.dim_aqua },
+      CmpItemKindVariable     = { fg   = C.aqua_dim },
       CmpItemKindField        = { link = 'CmpItemKindVariable' },
       CmpItemKindProperty     = { link = 'CmpItemKindVariable' },
 
-      CmpItemKindFunction     = { fg   = C.dim_blue },
+      CmpItemKindFunction     = { fg   = C.blue_dim },
       CmpItemKindConstructor  = { link = 'CmpItemKindFunction' },
       CmpItemKindMethod       = { link = 'CmpItemKindFunction' },
       CmpItemKindOperator     = { link = 'CmpItemKindFunction' },
 
-      CmpItemKindConstant     = { fg   = C.dim_orange },
+      CmpItemKindConstant     = { fg   = C.orange_dim },
       CmpItemKindColor        = { link = 'CmpItemKindConstant' },
       CmpItemKindEnumMember   = { link = 'CmpItemKindConstant' },
 
-      CmpItemKindSnippet      = { fg   = C.dim_purple },
+      CmpItemKindSnippet      = { fg   = C.purple_dim },
 
       CmpItemKindFile         = { link = 'CmpItemKindText' },
-      CmpItemKindFolder       = { fg   = C.dim_blue },
+      CmpItemKindFolder       = { fg   = C.blue_dim },
     },
 
     -- 'mawkler/modicator.nvim'
     modicator = {
-      NormalMode  = { fg = C.br_blue    },
-      InsertMode  = { fg = C.br_green,  italic = true },
-      VisualMode  = { fg = C.br_purple, italic = true},
-      SelectMode  = { fg = C.br_purple, bold = true },
-      CommandMode = { fg = C.br_yellow  },
-      ReplaceMode = { fg = C.br_red,    bold = true, italic = true },
+      NormalMode  = { fg = C.blue_br    },
+      InsertMode  = { fg = C.green_br,  italic = true },
+      VisualMode  = { fg = C.purple_br, italic = true},
+      SelectMode  = { fg = C.purple_br, bold = true },
+      CommandMode = { fg = C.yellow_br  },
+      ReplaceMode = { fg = C.red_br,    bold = true, italic = true },
     },
 
     -- 'rhysd/git-messenger.vim'
@@ -818,11 +819,11 @@ M.highlights = function()
       RenderMarkdownBullet      = { link = "@markup.list" },
       RenderMarkdownChecked     = { link = "@markup.list.checked" },
       RenderMarkdownUnchecked   = { link = "@markup.list.unchecked" },
-      RenderMarkdownInProgress  = { fg = C.dim_yellow },
-      RenderMarkdownBlocked     = { fg = C.dim_red },
+      RenderMarkdownInProgress  = { fg = C.yellow_dim },
+      RenderMarkdownBlocked     = { fg = C.red_dim },
 
       RenderMarkdownCode        = { link = "CursorLine" },
-      RenderMarkdownCodeInline  = { fg = C.br_blue, bg = C.blue_bg },
+      RenderMarkdownCodeInline  = { fg = C.blue_br, bg = C.blue_bg },
 
       RenderMarkdownTableHead   = { fg = C.bg3 },
       RenderMarkdownTableRow    = { link = "RenderMarkdownTableHead" },

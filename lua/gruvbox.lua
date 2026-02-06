@@ -566,6 +566,7 @@ M.highlights = function()
       -- LspReferenceWrite
       -- LspCodeLens
       -- LspCodeLensSeparator
+      LspInlayHint                = { fg = C.bg3, italic = true },
       LspSignatureActiveParameter = { fg = C.fg0, bg = C.aqua_bg, bold = true, italic = true },
     },
 

@@ -343,6 +343,8 @@ M.highlights = function()
     },
 
     treesitter = {
+      TSDefinition          = { fg = C.orange_hl, bg = C.blue_bg },
+      TSDefinitionUsage     = { link = "TSDefinition" },
       TSAnnotation          = { link = 'PreProc' },
       TSAttribute           = { link = 'PreProc' },
       TSBoolean             = { link = 'Boolean' },

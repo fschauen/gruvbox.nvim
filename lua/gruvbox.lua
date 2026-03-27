@@ -837,6 +837,17 @@ M.highlights = function()
       RenderMarkdownQuote3      = { fg = C.purple },
       RenderMarkdownQuote4      = { fg = C.green },
     },
+
+    -- "stevearc/quicker.nvim"
+    quicker = {
+      QuickFixText            = { link = "Normal" },
+      QuickFixHeaderHard      = { link = "Delimiter" },
+      QuickFixHeaderSoft      = { fg = C.orange_bg },
+      QuickFixLineNr          = { fg = C.yellow_dim },
+      QuickFixFilename        = { link = "Directory" },
+      QuickFixFilenameInvalid = { link = "Comment" },
+      QuickFixTextInvalid     = { link = "QuickFixText" },
+    }
   }
 end
 
